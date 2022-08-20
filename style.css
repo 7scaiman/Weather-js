@@ -1,0 +1,79 @@
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    height: 1000px;
+    background-color: rgb(231, 231, 231);
+  }
+  .container h1 {
+    color: rgb(63, 185, 185);
+  }
+  .flex{display: flex;
+    flex-direction: row;
+    justify-content: space-between;}
+    .flex2{
+      display: flex;
+    }
+  .search-box{
+   margin-top: 22px;
+   margin-right: 20px;
+  }
+  .tabs{
+    background-color: rgb(37, 37, 37);
+  }
+  .tabs-items{
+    display: flex;
+  }
+  .tabs-item{ color: azure;
+text-decoration: none;
+margin-left: 40px;
+font-size: 25px;
+}
+  .tabs-block{display: none;}
+  .tabs-block:target{
+    display: block;
+  }
+  .tb1-1{
+    margin-top: 30px;
+  }
+ #tab_01 div{
+  background-color: white;
+ }
+ #tab_01 h2{
+  color: rgb(63, 185, 185);
+ }
+ .blue{
+  color: rgb(63, 185, 185);
+  font-weight: 700;
+ }
+ p{
+  font-weight: 700;
+ }
+ .joj{
+  padding-left: 60px;
+ }
+ .joj p{
+ margin-left: 30px;
+ }
+ .st1 h2{
+     color: black;
+ }
+ .dad{
+  margin-left: 40px;
+ }
+ .dad div{
+  background-color: whitesmoke;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-left: 5px;
+  margin-top: 25px;
+ }
+.sizeup{
+  font-size: 30px;
+}
+.tb2-2{
+  margin-left: 43px;
+  background-color: whitesmoke;
+}
+.dad2{
+  background-color: white;
+}

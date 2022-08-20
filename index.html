@@ -1,0 +1,229 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body class="container">
+    <div class="flex">
+        <div>
+            <h1>MY WEATHER</h1>
+
+        </div>
+        <div>
+            <form id="search" action="">
+                <input id="cityInput" class="search-box" type="text" value="Kyiv">
+                <button type="button" value="submit" onclick="GetInfo()">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="tabs">
+        <nav class="tabs-items">
+            <div class="tab1">
+                <a href="#tab_01" class="tabs-item">Today</a>
+            </div>
+            <div class="tab2">
+                <a href="#tab_02" class="tabs-item">5-day forecast</a>
+            </div>
+        </nav>
+
+    </div>
+    <div class="tabs-body">
+        <div id="tab_01" class="tabs-block">
+            <div class="tb1-1">
+                <div class="flex" style="
+            margin-right: 30px;
+            margin-left: 30px;
+        ">
+                    <h2>Current weather</h2>
+                    <h1 id="cityName" style="
+                margin-right: 80px; color: black;">
+                        </h2>
+                        <p id="p1" class="blue" style="
+                margin-top: 25px;
+            "></p>
+                </div>
+                <div style="margin-left: 50px;margin-right: 50px;" class="flex">
+                    <div>
+                        <img id="cloud1" src="img/preloader.gif" alt="" style="width: 100px; ">
+                        <p id="statusweather" style="margin-left: 25px; margin-top: -15;"></p>
+                    </div>
+                    <div>
+                        <h1 id="temp1" style="color: black; margin-left: 25px;"></h1>
+                        <p style="margin-left: 10px; color: gray;">real feel:<span id="realfeel"></span></p>
+                    </div>
+                    <div>
+                        <p>sunrice: <span id="sunrise"></span></p>
+                        <p>sunset: <span id="sunset"></span></p>
+                        <p>max temp: <span id="maxtemp"></span> <br> min temp: <span id="mintemp"></span></p>
+                    </div>
+                </div>
+                <div class="flex2">
+                </div>
+            </div>
+            <div class="tb1-2">
+                <h2 style="margin-left: 20px; margin-top: 20px;">Hourly</h2>
+                <div class="flex2">
+                    <div class="st1" style="margin-left: 70px; margin-top: 145px;">
+                        <h3>Forecast</h3>
+                        <h3 style="margin-top: -8;">Temp</h3>
+                        <h3 style="margin-top: -5;">Real feel</h3>
+                        <h3 style="margin-top: -6;">Wind</h3>
+                    </div>
+                    <div class="flex">
+                        <div class="joj">
+                            <p id="hourly_0">NOW</p>
+                            <img id="cloud2" src="img/preloader.gif" alt="" style="width: 100px; ">
+                            <p id="forecasthourly_1"></p>
+                            <p id="temphourly_1"></p>
+                            <p id="Real_feel1"></p>
+                            <p id="Wind_1"></p>
+
+                        </div>
+                        <div class="joj">
+
+                            <p id="hourly_1">00:00</p>
+                            <img id="cloud3" src="img/preloader.gif" alt="" style="width: 100px; ">
+                            <p id="forecasthourly_2"></p>
+                            <p id="temphourly_2"></p>
+                            <p id="Real_feel2"></p>
+                            <p id="Wind_2"></p>
+                        </div>
+                        <div class="joj">
+
+                            <p id="hourly_2">00:00</p>
+                            <img id="cloud4" src="img/preloader.gif" alt="" style="width: 100px; ">
+                            <p id="forecasthourly_3"></p>
+                            <p id="temphourly_3"></p>
+                            <p id="Real_feel3"></p>
+                            <p id="Wind_3"></p>
+                        </div>
+                        <div class="joj">
+                            <p id="hourly_3">00:00</p>
+                            <img id="cloud5" src="img/preloader.gif" alt="" style="width: 100px; ">
+                            <p id="forecasthourly_4"></p>
+                            <p id="temphourly_4"></p>
+                            <p id="Real_feel4"></p>
+                            <p id="Wind_4"></p>
+                        </div>
+                        <div class="joj">
+                            <p id="hourly_4">00:00</p>
+                            <img id="cloud6" src="img/preloader.gif" alt="" style="width: 100px; ">
+                            <p id="forecasthourly_5"></p>
+                            <p id="temphourly_5"></p>
+                            <p id="Real_feel5"></p>
+                            <p id="Wind_5"></p>
+                        </div>
+                        <div class="joj">
+                            <p id="hourly_5">00:00</p>
+                            <img id="cloud7" src="img/preloader.gif" alt="" style="width: 100px; ">
+                            <p id="forecasthourly_6"></p>
+                            <p id="temphourly_6"></p>
+                            <p id="Real_feel6"></p>
+                            <p id="Wind_6"></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tb1-3"></div>
+        </div>
+        <div id="tab_02" class="tabs-block">
+            <div class="tb2-1" style="margin-left: 20px;">
+                <div class="flex2 dad">
+                       <div onclick="click1()" id="div_1">
+                        <p class="sizeup">Today</p>
+                        <p id="dataInfo_0"></p>
+                        <img id="cloudFor_0" src="img/preloader.gif" alt="" style="width: 100px; ">
+                        <p id="tempFor_0"></p>            
+                    </div>
+                       <div onclick="click2()" id="div_2" >
+                        <p class="sizeup" id="dataID_1">Loading</p>
+                        <p id="dataInfo_1"></p>
+                        <img id="cloudFor_1" src="img/preloader.gif" alt="" style="width: 100px; ">
+                        <p id="tempFor_1"></p>            
+                    </div>
+                       <div onclick="click3()" id="div_3">
+                        <p class="sizeup" id="dataID_2">Loading</p>
+                        <p id="dataInfo_2"></p>
+                        <img id="cloudFor_2" src="img/preloader.gif" alt="" style="width: 100px; ">
+                        <p id="tempFor_2"></p>            
+                    </div>
+                       <div onclick="click4()" id="div_4">
+                        <p class="sizeup" id="dataID_3">Loading</p>
+                        <p id="dataInfo_3"></p>
+                        <img id="cloudFor_3" src="img/preloader.gif" alt="" style="width: 100px; ">
+                        <p id="tempFor_3"></p>            
+                    </div>
+                       <div onclick="click5()" id="div_5">
+                        <p class="sizeup" id="dataID_4">Loading</p>
+                        <p id="dataInfo_4"></p>
+                        <img id="cloudFor_4" src="img/preloader.gif" alt="" style="width: 100px; ">     
+                        <p id="tempFor_4"></p>            
+                    </div>
+                    </div>
+            </div>
+            <div class="tb2-2 dad2">
+                <h2>hourly</h2>
+                <div class="flex" style="margin-right: 90px;"> 
+                    <h3 style="margin-left: 10px;" id="dayiii"></h3>
+                    <h3 id="d1"></h3>
+                    <h3 id="d2"></h3>
+                    <h3 id="d3"></h3>
+                    <h3 id="d4"></h3>
+                    <h3 id="d5"></h3>
+                    <h3 id="d6"></h3>
+                    <h3 id="d7"></h3>              
+                </div>
+                <div class="flex" style="margin-left: 150px; margin-right: 60px;"> 
+                    <img id="img1" src="img/preloader.gif" alt="" style="width: 100px; ">
+                    <img id="img2" src="img/preloader.gif" alt="" style="width: 100px; ">
+                    <img id="img3" src="img/preloader.gif" alt="" style="width: 100px; ">
+                    <img id="img4" src="img/preloader.gif" alt="" style="width: 100px; ">
+                    <img id="img5" src="img/preloader.gif" alt="" style="width: 100px; ">
+                    <img id="img6" src="img/preloader.gif" alt="" style="width: 100px; ">
+                    <img id="img7" src="img/preloader.gif" alt="" style="width: 100px; ">
+                </div>
+                <div class="flex" style="margin-right: 90px;"> 
+                    <h3 style="margin-left: 10px;">forecast</h3>
+                    <h3 id="f1"></h3>
+                    <h3 id="f2"></h3>
+                    <h3 id="f3"></h3>
+                    <h3 id="f4"></h3>
+                    <h3 id="f5"></h3>
+                    <h3 id="f6"></h3>
+                    <h3 id="f7"></h3>
+                </div>
+                <div class="flex" style="margin-right: 100px;"> 
+                    <h3 style="margin-left: 10px;">temp°C</h3>
+                    <h3 id="t1"></h3>
+                    <h3 id="t2"></h3>
+                    <h3 id="t3"></h3>
+                    <h3 id="t4"></h3>
+                    <h3 id="t5"></h3>
+                    <h3 id="t6"></h3>
+                    <h3 id="t7"></h3>
+                </div>
+                <div class="flex" style="margin-right: 100px;"> 
+                    <h3 style="margin-left: 10px;">feel like</h3>
+                    <h3 id="tf1"></h3>
+                    <h3 id="tf2"></h3>
+                    <h3 id="tf3"></h3>
+                    <h3 id="tf4"></h3>
+                    <h3 id="tf5"></h3>
+                    <h3 id="tf6"></h3>
+                    <h3 id="tf7"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js">
+    </script>
+
+</body>
+
+</html>
